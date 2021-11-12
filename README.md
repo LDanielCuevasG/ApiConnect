@@ -1,4 +1,4 @@
-# ApiConnection
+# ApiConnect
 Simple implementation to connect with an API
 <br /> <br />
 Methods:
