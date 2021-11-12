@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Authors>Luis Cuevas</Authors>
+    <Product>ApiConnectLibrary</Product>
+    <Description>Library to handle data sent and received between a client and an API</Description>
+  </PropertyGroup>
+
+</Project>

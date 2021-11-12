@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiConnect", "ApiConnect\ApiConnect.csproj", "{9622C68F-374E-4BDD-A31A-CD7967065D6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiConnectLibrary", "ApiConnectLibrary\ApiConnectLibrary.csproj", "{54D9F3BB-8765-4479-B7C0-8AAE77B40FCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9622C68F-374E-4BDD-A31A-CD7967065D6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9622C68F-374E-4BDD-A31A-CD7967065D6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9622C68F-374E-4BDD-A31A-CD7967065D6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D9F3BB-8765-4479-B7C0-8AAE77B40FCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D9F3BB-8765-4479-B7C0-8AAE77B40FCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D9F3BB-8765-4479-B7C0-8AAE77B40FCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D9F3BB-8765-4479-B7C0-8AAE77B40FCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

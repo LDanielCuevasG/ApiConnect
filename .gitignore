@@ -1,5 +1,7 @@
 ApiConnect/bin
 ApiConnect/obj
 ApiConnect/Properties
-ApiConnect/ApiConnection.csproj.user
+ApiConnectLibrary/bin
+ApiConnectLibrary/obj
+ApiConnectLibrary/Properties
 .vs
