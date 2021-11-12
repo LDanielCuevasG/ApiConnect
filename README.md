@@ -1,11 +1,11 @@
 # ApiConnect
-Simple implementation to connect with an API
+Implementation to connect client with an API
 <br /> <br />
 Methods:
   - Call
 
 ### Considerations
-- Sent data can be a json/form object 
+- Sent data can be a json/formdata object 
 - Received data must be a json object
 
 ## Usage
@@ -39,8 +39,9 @@ public Character GetCharacter(string id)
 {
     Character character = null;
 
-    ApiConnection<Character> api = new ApiConnection<Character>(url);
-    character = api.Call($"api/v1/Character/{id}");
+    ApiConnect<Character> api = new ApiConnect<Character>(url);
+    api.Method = $"api/v1/Character/{id}";
+    character = api.Call();
 
     return character;
 }
@@ -51,8 +52,9 @@ public List<Character> GetCharacters()
 {
     List<Character> characters = null;
 
-    ApiConnection<List<Character>> api = new ApiConnection<List<Character>>(url);
-    characters = api.Call($"api/v1/Character");
+    ApiConnect<List<Character>> api = new ApiConnect<List<Character>>(url);
+    api.Method = $"api/v1/Character";
+    characters = api.Call();
 
     return characters;
 }
