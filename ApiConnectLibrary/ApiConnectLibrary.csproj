@@ -5,6 +5,7 @@
     <Authors>Luis Cuevas</Authors>
     <Product>ApiConnectLibrary</Product>
     <Description>Library to handle data sent and received between a client and an API</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 </Project>
