@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ApiConnect
 {
-    class ApiContent
+    public class ApiContent
     {
 
         public static HttpContent GetJsonContent(object data)
@@ -24,6 +24,7 @@ namespace ApiConnect
 
             return content;
         }
+
 
         public static MultipartFormDataContent GetFormContent(object data)
         {
