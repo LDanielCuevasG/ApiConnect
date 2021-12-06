@@ -24,6 +24,13 @@ namespace ApiConnectLibrary.Responses
             Result = OperationResult.Successful;
         }
 
+        public OperationResponse(T value, string detail)
+        {
+            Value = value;
+            Result = OperationResult.Successful;
+            Detail = detail;
+        }
+
         public OperationResponse(T value, OperationResult result, string detail)
         {
             Value = value;
