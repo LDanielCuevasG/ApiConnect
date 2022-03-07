@@ -43,47 +43,53 @@ namespace ApiConnect
 
             try
             {
-                using (HttpClient client = new HttpClient())
-                {
-                    client.Timeout = TimeSpan.FromMinutes(5);
-                    client.BaseAddress = new Uri(BaseAddress);
-                    client.DefaultRequestHeaders.Accept.Clear();
+                HttpClient client = new HttpClient();
+                
+                client.Timeout = TimeSpan.FromMinutes(5);
+                client.BaseAddress = new Uri(BaseAddress);
+                client.DefaultRequestHeaders.Accept.Clear();
 
-                    if (Headers != null && Headers.Count > 0) {
-                        foreach (KeyValuePair<string, string> header in Headers) {
-                            client.DefaultRequestHeaders.Add(header.Key, header.Value);
-                        }
+                if (Headers != null && Headers.Count > 0) {
+                    foreach (KeyValuePair<string, string> header in Headers) {
+                        client.DefaultRequestHeaders.Add(header.Key, header.Value);
                     }
-
-                    if (data != null) {
-                        content = DefineContent(data, mediaType);
-                    }
-
-                    HttpResponseMessage response = null;
-
-                    switch (httpMethod)
-                    {
-                        case HttpMethods.Get:
-                            response = client.GetAsync(Method).Result;
-                            break;
-                        case HttpMethods.Post:
-                            response = client.PostAsync(Method, content).Result;
-                            break;
-                        case HttpMethods.Put:
-                            response = client.PutAsync(Method, content).Result;
-                            break;
-                        case HttpMethods.Delete:
-                            response = client.DeleteAsync(Method).Result;
-                            break;
-                    }
-
-                    string responseBody = response.Content.ReadAsStringAsync().Result;
-                    T responseObject = JsonConvert.DeserializeObject<T>(responseBody);
-                    return responseObject;
                 }
+
+                if (data != null) {
+                    content = DefineContent(data, mediaType);
+                }
+
+                HttpResponseMessage response = null;
+
+                switch (httpMethod)
+                {
+                    case HttpMethods.Get:
+                        response = client.GetAsync(Method).Result;
+                        break;
+                    case HttpMethods.Post:
+                        response = client.PostAsync(Method, content).Result;
+                        break;
+                    case HttpMethods.Put:
+                        response = client.PutAsync(Method, content).Result;
+                        break;
+                    case HttpMethods.Delete:
+                        response = client.DeleteAsync(Method).Result;
+                        break;
+                }
+
+                client.Dispose();
+                string responseBody = response.Content.ReadAsStringAsync().Result;
+                JsonSerializerSettings settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                };
+                T responseObject = JsonConvert.DeserializeObject<T>(responseBody, settings);
+                return responseObject;
+                
             }
             catch (Exception e) {
-                return default(T);
+                throw;
             }
         }
 

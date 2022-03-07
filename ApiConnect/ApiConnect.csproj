@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <Authors>Luis Cuevas</Authors>
     <Description>Implementation to connect client with an API</Description>
-    <Version>1.1.0</Version>
+    <Version>1.1.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
